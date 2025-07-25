@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Préstamos Bancarios</title>
+    
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <script defer src="./js/main.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Simulador de Préstamos Bancarios</h1>
+    </header>
+
+    <main>
+        <section class="input-section">
+            <h2>Ingresa los Datos del Préstamo</h2>
+            <div class="form-group">
+                <label for="montoInput">Monto del Préstamo ($):</label>
+                <input type="number" id="montoInput" min="1" step="1" placeholder="Ej: 10000">
+            </div>
+            <div class="form-group">
+                <label for="tasaInput">Tasa Anual (%):</label>
+                <input type="number" id="tasaInput" min="0" step="1" placeholder="Ej: 8">
+            </div>
+            <div class="form-group">
+                <label for="plazoInput">Plazo (meses):</label>
+                <input type="number" id="plazoInput" min="1" step="1" placeholder="Ej: 24">
+            </div>
+            <button id="calcularPrestamoBtn">Calcular Préstamo</button>
+            <button id="limpiarCamposBtn" class="secondary-btn">Limpiar Campos</button>
+        </section>
+
+        <section class="results-section">
+            <h2>Resultado de la Simulación</h2>
+            <div id="resultadoPrestamo" class="result-box">
+                <p>Monto: $<span id="displayMonto">0.00</span></p>
+                <p>Tasa Anual: <span id="displayTasa">0.00</span>%</p>
+                <p>Plazo: <span id="displayPlazo">0</span> meses</p>
+                <hr>
+                <h3>Pago Mensual Aproximado: <span id="pagoMensualValor">$0.00</span></h3>
+                <p id="mensajeAdvertencia" class="info-message">Este es un cálculo simple y aproximado. Consulta con un banco real para condiciones exactas.</p>
+            </div>
+            <p id="mensajeError" class="error-message"></p>
+        </section>
+
+        <section class="last-simulation-section">
+            <h2>Última Simulación Guardada</h2>
+            <div id="lastSimulationDisplay" class="result-box">
+                <p>Monto: $<span id="lastMonto">--</span></p>
+                <p>Tasa: <span id="lastTasa">--</span>%</p>
+                <p>Plazo: <span id="lastPlazo">--</span> meses</p>
+                <p>Pago Mensual: <span id="lastPago">--</span></p>
+            </div>
+            <div class="button-group">
+                <button id="cargarUltimaSimBtn" class="secondary-btn">Cargar Última Simulación</button>
+                <button id="borrarUltimaSimBtn" class="secondary-btn">Borrar Última Simulación</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Simulador de Préstamos</p>
+    </footer>
+</body>
+</html>
